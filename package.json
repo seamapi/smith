@@ -1,6 +1,6 @@
 {
   "name": "@seamapi/smith",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Metalsmith wrapper for Seam API code and doc generation.",
   "type": "module",
   "main": "index.js",
