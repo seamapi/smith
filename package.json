@@ -50,7 +50,7 @@
     "lib",
     "src",
     "dist",
-    "tsconfig.json",
+    "tsconfig.base.json",
     "!**/*.test.ts"
   ],
   "scripts": {
