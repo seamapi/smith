@@ -1,23 +1,23 @@
 import type { Builder, Command, Describe, Handler } from 'landlubber'
 
-import { todo } from '@seamapi/smith'
+import { getHandlebarsPartials } from '@seamapi/smith'
 
 interface Options {
-  x: string
+  root: string
 }
 
-export const command: Command = 'todo x'
+export const command: Command = 'todo root'
 
 export const describe: Describe = 'TODO'
 
 export const builder: Builder = {
-  x: {
+  root: {
     type: 'string',
-    default: 'TODO',
+    default: 'test/fixtures/handlebars/partials',
     describe: 'TODO',
   },
 }
 
-export const handler: Handler<Options> = async ({ x, logger }) => {
-  logger.info({ data: todo(x) }, 'TODO')
+export const handler: Handler<Options> = async ({ root, logger }) => {
+  logger.info({ data: getHandlebarsPartials(root) }, 'TODO')
 }
