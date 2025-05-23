@@ -37,6 +37,7 @@
     "lib",
     "src",
     "dist",
+    "tsconfig.json",
     "!**/*.test.ts"
   ],
   "scripts": {
