@@ -15,6 +15,16 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
+    },
+    "./eslint": {
+      "import": {
+        "types": "./eslint.d.ts",
+        "default": "./eslint.js"
+      },
+      "require": {
+        "types": "./dist/eslint.d.cts",
+        "default": "./dist/eslint.cjs"
+      }
     }
   },
   "module": "index.js",
@@ -34,6 +44,9 @@
     "index.js",
     "index.js.map",
     "index.d.ts",
+    "eslint.js",
+    "eslint.js.map",
+    "eslint.d.ts",
     "lib",
     "src",
     "dist",
@@ -42,8 +55,8 @@
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
-    "prebuild": "tsx src/index.ts",
-    "postbuild": "node ./index.js",
+    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/eslint.ts'",
+    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./eslint.js'",
     "build:entrypoints": "npm run build:ts",
     "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
@@ -86,6 +99,7 @@
     "@swc/core": "^1.11.29",
     "ava": "^6.0.1",
     "c8": "^10.1.2",
+    "concurrently": "^9.1.2",
     "del-cli": "^6.0.0",
     "eslint": "^8.9.0",
     "landlubber": "^2.0.0",

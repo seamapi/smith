@@ -28,6 +28,6 @@
       "lib/*": ["./src/lib/*"]
     }
   },
-  "files": ["src/index.ts"],
+  "files": ["src/index.ts", "src/eslint.ts"],
   "include": ["src/**/*", "test/**/*", "examples/**/*", "tsup.config.ts"]
 }
