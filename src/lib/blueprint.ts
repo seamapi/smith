@@ -35,5 +35,5 @@ export const blueprint =
     const blueprint = await createBlueprint(typesModule, {
       ...(skipCodeFormat || formatCode == null ? {} : { formatCode }),
     })
-    Object.assign(metadata, blueprint)
+    Object.assign(metadata, { blueprint })
   }
