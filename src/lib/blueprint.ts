@@ -12,8 +12,8 @@ export const blueprint =
     skipCodeFormat = false,
   }: {
     types: unknown
-    formatCode: BlueprintOptions['formatCode']
-    skipCodeFormat: boolean
+    formatCode?: BlueprintOptions['formatCode']
+    skipCodeFormat?: boolean
   }) =>
   async (_files: Metalsmith.Files, metalsmith: Metalsmith): Promise<void> => {
     const metadata = metalsmith.metadata()
