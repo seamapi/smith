@@ -55,7 +55,6 @@
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
-    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/eslint.ts'",
     "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./eslint.js'",
     "build:entrypoints": "npm run build:ts",
     "postbuild:entrypoints": "tsup",
@@ -64,7 +63,7 @@
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
     "test": "c8 ava",
-    "pretest": "concurrently --raw --group 'tsx ./index.js' 'tsx ./eslint.js'",
+    "pretest": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/eslint.ts'",
     "test:update": "ava --update-snapshots",
     "test:watch": "ava --watch",
     "test:debug": "ava debug --break",
