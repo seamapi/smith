@@ -81,7 +81,7 @@
     "npm": ">= 10.9.0"
   },
   "peerDependencies": {
-    "@metalsmith/layouts": "^3.0.0",
+    "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": ">=0.43.1",
     "del": "^8.0.0",
     "eslint": "^8.9.0",
@@ -103,7 +103,7 @@
     "glob": "^11.0.2"
   },
   "devDependencies": {
-    "@metalsmith/layouts": "^3.0.0",
+    "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": "^0.43.1",
     "@seamapi/types": "^1.402.0",
     "@swc/core": "^1.11.29",
