@@ -47,6 +47,7 @@ export const handler: Handler<Options> = async ({ logger }) => {
     .use(
       layouts({
         default: 'default.hbs',
+        transform: 'handlebars',
         engineOptions: {
           noEscape: true,
           helpers: handlebarsHelpers,
