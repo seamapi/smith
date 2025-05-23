@@ -107,8 +107,6 @@
     "@seamapi/blueprint": "^0.43.1",
     "@seamapi/types": "^1.402.0",
     "@swc/core": "^1.11.29",
-    "@types/debug": "^4.1.12",
-    "@types/micromatch": "^4.0.9",
     "ava": "^6.0.1",
     "c8": "^10.1.2",
     "concurrently": "^9.1.2",
