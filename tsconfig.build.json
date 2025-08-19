@@ -9,7 +9,7 @@
     "rootDir": "./src",
     "outDir": "./"
   },
-  "files": ["src/index.ts", "src/eslint.ts"],
+  "files": ["src/index.ts", "src/eslint-config.ts"],
   "include": ["src/**/*"],
   "exclude": ["**/*.test.ts"]
 }
