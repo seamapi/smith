@@ -14,7 +14,6 @@ import {
   handlebarsHelpers,
 } from '@seamapi/smith'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Options {}
 
 export const command: Command = 'blueprint'
