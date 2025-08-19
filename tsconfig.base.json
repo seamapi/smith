@@ -24,10 +24,6 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "paths": {
-      "@seamapi/smith": ["./src/index.ts"],
-      "lib/*": ["./src/lib/*"]
-    }
+    "baseUrl": "./"
   }
 }
