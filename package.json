@@ -82,7 +82,7 @@
   },
   "peerDependencies": {
     "@metalsmith/layouts": "^2.7.0",
-    "@seamapi/blueprint": ">=0.43.1",
+    "@seamapi/blueprint": ">=0.51.3",
     "del": "^8.0.0",
     "eslint": "^9.31.0",
     "jiti": "^2.0.0",
@@ -104,8 +104,8 @@
   },
   "devDependencies": {
     "@metalsmith/layouts": "^2.7.0",
-    "@seamapi/blueprint": "^0.43.1",
-    "@seamapi/types": "^1.402.0",
+    "@seamapi/blueprint": "^0.51.3",
+    "@seamapi/types": "^1.540.0",
     "@swc/core": "^1.11.29",
     "ava": "^6.0.1",
     "c8": "^10.1.2",
