@@ -77,8 +77,8 @@
     "report": "c8 report"
   },
   "engines": {
-    "node": ">=20.9.0",
-    "npm": ">=10.1.0"
+    "node": ">=22.11.0",
+    "npm": ">=10.9.4"
   },
   "peerDependencies": {
     "@metalsmith/layouts": "^2.7.0",
@@ -94,7 +94,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@types/node": "^22.15.21",
+    "@types/node": "^24.10.9",
     "change-case": "^5.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
@@ -111,7 +111,7 @@
     "c8": "^10.1.2",
     "concurrently": "^9.1.2",
     "del": "^8.0.0",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "eslint": "^9.31.0",
     "jiti": "^2.4.2",
     "jstransformer-handlebars": "^1.2.0",
