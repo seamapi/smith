@@ -10,20 +10,12 @@
       "import": {
         "types": "./index.d.ts",
         "default": "./index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
       }
     },
     "./eslint-config": {
       "import": {
         "types": "./eslint-config.d.ts",
         "default": "./eslint-config.js"
-      },
-      "require": {
-        "types": "./dist/eslint-config.d.cts",
-        "default": "./dist/eslint-config.cjs"
       }
     }
   },
@@ -49,15 +41,14 @@
     "eslint-config.d.ts",
     "lib",
     "src",
-    "dist",
     "tsconfig.base.json",
+    "!test",
     "!**/*.test.ts"
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
     "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./eslint-config.js'",
     "build:entrypoints": "npm run build:ts",
-    "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
     "prebuild:ts": "del 'index.*' 'eslint-config.*' lib",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
@@ -80,6 +71,16 @@
     "node": ">=22.11.0",
     "npm": ">=10.9.4"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.11.0 || ^22.11.0"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": "^11.16.0 || ^10.9.4"
+    }
+  },
   "peerDependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": ">=0.51.3",
@@ -100,15 +101,14 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "glob": "^11.0.2",
-    "neostandard": "^0.12.2"
+    "neostandard": "^0.13.0"
   },
   "devDependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": "^1.0.0",
     "@seamapi/types": "^1.540.0",
-    "@swc/core": "^1.11.29",
-    "ava": "^6.0.1",
-    "c8": "^10.1.2",
+    "ava": "^8.0.1",
+    "c8": "^12.0.0",
     "concurrently": "^9.1.2",
     "del": "^8.0.0",
     "del-cli": "^7.0.0",
@@ -120,8 +120,7 @@
     "mkdirp": "^3.0.1",
     "prettier": "^3.0.0",
     "tsc-alias": "^1.8.2",
-    "tsup": "^8.0.1",
     "tsx": "^4.6.2",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.3"
   }
 }
