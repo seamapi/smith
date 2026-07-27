@@ -54,7 +54,7 @@
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
     "test": "c8 ava",
-    "pretest": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/eslint-config.ts'",
+    "pretest": "concurrently --raw --group 'tsx src/index.ts' 'node --experimental-strip-types src/eslint-config.ts'",
     "test:update": "ava --update-snapshots",
     "test:watch": "ava --watch",
     "test:debug": "ava debug --break",
