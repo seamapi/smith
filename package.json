@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@seamapi/smith",
   "version": "1.2.1",
   "description": "Metalsmith wrapper for Seam API code and doc generation.",
@@ -7,16 +8,12 @@
   "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./index.d.ts",
-        "default": "./index.js"
-      }
+      "types": "./index.d.ts",
+      "default": "./index.js"
     },
     "./eslint-config": {
-      "import": {
-        "types": "./eslint-config.d.ts",
-        "default": "./eslint-config.js"
-      }
+      "types": "./eslint-config.d.ts",
+      "default": "./eslint-config.js"
     }
   },
   "module": "index.js",
@@ -53,7 +50,7 @@
     "prebuild:ts": "del 'index.*' 'eslint-config.*' lib",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
-    "test": "c8 ava",
+    "test": "ava",
     "pretest": "concurrently --raw --group 'tsx src/index.ts' 'node --experimental-strip-types src/eslint-config.ts'",
     "test:update": "ava --update-snapshots",
     "test:watch": "ava --watch",
@@ -64,28 +61,31 @@
     "example": "tsx examples",
     "example:inspect": "tsx --inspect examples",
     "format": "prettier --write --ignore-path .gitignore .",
-    "preformat": "eslint --fix .",
-    "report": "c8 report"
+    "preformat": "eslint --fix ."
   },
   "engines": {
-    "node": ">=22.11.0",
+    "node": ">=22.13.0",
     "npm": ">=10.9.4"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "^24.11.0 || ^22.11.0"
+      "version": "^26.0.0 || ^24.12.0 || ^22.20.0"
     },
     "packageManager": {
       "name": "npm",
       "version": "^11.16.0 || ^10.9.4"
     }
   },
+  "packageManager": "npm@11.19.0",
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
   "peerDependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": ">=0.51.3",
     "del": "^8.0.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.31.0 || ^10.0.0",
     "jiti": "^2.0.0",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
@@ -95,24 +95,24 @@
     "typescript": "^6.0.0"
   },
   "dependencies": {
-    "@types/node": "^24.10.9",
+    "@types/node": "^26.6.6",
     "change-case": "^5.4.4",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "glob": "^14.0.2",
-    "neostandard": "^0.13.0"
+    "neostandard": "^0.14.1"
   },
   "devDependencies": {
     "@metalsmith/layouts": "^2.7.0",
     "@seamapi/blueprint": "^1.13.2",
     "@seamapi/types": "^1.540.0",
     "ava": "^8.0.1",
-    "c8": "^12.0.0",
     "concurrently": "^9.1.2",
     "del": "^8.0.0",
-    "del-cli": "^7.0.0",
-    "eslint": "^9.31.0",
+    "del-cli": "^8.0.1",
+    "eslint": "^10.14.0",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "jiti": "^2.4.2",
     "jstransformer-handlebars": "^1.2.0",
     "landlubber": "^2.0.0",

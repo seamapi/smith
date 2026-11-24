@@ -1,5 +1,5 @@
 import { globalIgnores } from 'eslint/config'
-import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import-x'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import unusedImports from 'eslint-plugin-unused-imports'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'

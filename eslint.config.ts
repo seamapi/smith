@@ -1,5 +1,5 @@
 import { globalIgnores } from 'eslint/config'
-import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import-x'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import unusedImports from 'eslint-plugin-unused-imports'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
@@ -20,7 +20,17 @@ export default [
     files,
     plugins: {
       'unused-imports': unusedImports,
-      import: importPlugin,
+      'import-x': importPlugin,
+    },
+    settings: {
+      'import-x/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
+      'import-x/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+        },
+      },
     },
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
@@ -31,9 +41,25 @@ export default [
           fixStyle: 'inline-type-imports',
         },
       ],
-      'import/extensions': ['error', 'ignorePackages'],
-      'import/no-duplicates': ['error', { 'prefer-inline': true }],
-      'import/no-relative-parent-imports': 'error',
+      'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
+      'import-x/no-cycle': [
+        'error',
+        {
+          ignoreExternal: true,
+        },
+      ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['..', '../**'],
+              message:
+                'Import by path alias instead, e.g., lib/foo/bar.js or test/fixtures/blueprint.js.',
+            },
+          ],
+        },
+      ],
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'error',
@@ -61,7 +87,7 @@ export default [
             ['^node:'],
             ['^@?\\w'],
             ['@seamapi/smith'],
-            ['^lib/'],
+            ['^lib/', '^test/'],
             ['^'],
             ['^\\.'],
           ],
