@@ -83,9 +83,9 @@
   },
   "peerDependencies": {
     "@metalsmith/layouts": "^2.7.0",
-    "@seamapi/blueprint": ">=0.51.3",
+    "@seamapi/blueprint": "^1.0.0",
     "del": "^8.0.0",
-    "eslint": "^9.31.0 || ^10.0.0",
+    "eslint": "^10.0.0",
     "jiti": "^2.0.0",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.6.3",
@@ -122,17 +122,5 @@
     "tsc-alias": "^1.8.2",
     "tsx": "^4.6.2",
     "typescript": "^6.0.3"
-  },
-  "overrides": {
-    "shell-quote": "^1.11.0",
-    "gray-matter": {
-      "js-yaml": "^3.15.2"
-    },
-    "supertap": {
-      "js-yaml": "^3.15.2"
-    },
-    "@eslint/eslintrc": {
-      "js-yaml": "^4.3.2"
-    }
   }
 }
