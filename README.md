@@ -21,12 +21,14 @@ $ npm install @seamapi/smith
 
 ### Migrating to Metalsmith Layouts 3
 
-Generators that import `@metalsmith/layouts` should declare Layouts 3 and
-`jstransformer-handlebars` as direct development dependencies. Keep your
-existing templates, helpers, and partials. In each `layouts()` call, set
-`transform: 'handlebars'`, a `pattern` matching the files to render, and an
-`extname` preserving the output extension. The transformer alone is not
-sufficient: v3 defaults may skip files or change their extension to `.html`.
+Smith requires `@metalsmith/layouts` 3; Layouts 2 is no longer supported.
+Handlebars generators that import `@metalsmith/layouts` should declare Layouts 3
+and `jstransformer-handlebars` as direct development dependencies. Keep your
+existing templates, helpers, and partials. Layouts 3 requires an explicit
+`transform: 'handlebars'` for these generators. To preserve existing output,
+also set `pattern` to match the files you want to render and `extname` to keep
+their output extension. Otherwise, the defaults may skip files or rename them
+to `.html`.
 
 | Generator         | `pattern`   | `extname` |
 | ----------------- | ----------- | --------- |
