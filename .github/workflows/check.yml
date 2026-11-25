@@ -34,6 +34,10 @@ jobs:
           node_version: ${{ matrix.node }}
       - name: Test
         run: npm test
+      - name: Check rendered Blueprint example
+        run: |
+          npm run example -- blueprint
+          grep -Fx 'Blueprint Example' tmp/dist/README.md
   lint:
     name: Lint (Node.js v${{ matrix.node }})
     runs-on: ubuntu-latest

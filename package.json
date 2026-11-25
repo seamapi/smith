@@ -82,7 +82,7 @@
     "esbuild@0.28.2": true
   },
   "peerDependencies": {
-    "@metalsmith/layouts": "^2.7.0",
+    "@metalsmith/layouts": "^3.0.0",
     "@seamapi/blueprint": "^1.0.0",
     "del": "^9.0.1",
     "eslint": "^10.0.0",
@@ -104,7 +104,7 @@
     "neostandard": "^0.14.1"
   },
   "devDependencies": {
-    "@metalsmith/layouts": "^2.7.0",
+    "@metalsmith/layouts": "^3.0.0",
     "@seamapi/blueprint": "^1.13.2",
     "@seamapi/types": "^1.540.0",
     "ava": "^8.0.1",
